@@ -40,15 +40,14 @@ class PandasPage(webapp2.RequestHandler):
 
 class AnimalsPage(webapp2.RequestHandler):
     def get(self):
-        animal_input = "default"
-        if(self.request.get('animal')):
-            animal_input = self.request.get('animal')
+        animal_input = self.request.get('animal')
         name_input = self.request.get('name')
-        values = {
-            "name": animal_input,
-            "animal": name_input
-        }
         adjective = self.request.get('adj')
+        values = {
+            "name": name_input,
+            "animal": animal_input,
+            "adj": adjective
+        }
         self.response.headers['Content-Type'] = 'text/html'
         #self.response.write('<h1>' + name_input + ' Loves ' + adjective + ' ' + animal_input + '!</h1>')
         template = JINJA_ENVIRONMENT.get_template('templates/animals.html')
