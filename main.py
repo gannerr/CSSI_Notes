@@ -44,6 +44,10 @@ class AnimalsPage(webapp2.RequestHandler):
         if(self.request.get('animal')):
             animal_input = self.request.get('animal')
         name_input = self.request.get('name')
+        values = {
+            "name": animal_input,
+            "animal": name_input
+        }
         adjective = self.request.get('adj')
         self.response.headers['Content-Type'] = 'text/html'
         #self.response.write('<h1>' + name_input + ' Loves ' + adjective + ' ' + animal_input + '!</h1>')
