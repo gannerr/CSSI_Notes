@@ -52,7 +52,7 @@ class AnimalsPage(webapp2.RequestHandler):
         self.response.headers['Content-Type'] = 'text/html'
         #self.response.write('<h1>' + name_input + ' Loves ' + adjective + ' ' + animal_input + '!</h1>')
         template = JINJA_ENVIRONMENT.get_template('templates/animals.html')
-        self.response.write(template.render())
+        self.response.write(template.render(values))
 
 
 
